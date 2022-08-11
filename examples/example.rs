@@ -1,4 +1,4 @@
-use teza::graph::*;
+use teza::{input::*, node::*};
 
 fn main() {
     fn round(x: f32, precision: u32) -> f32 {
@@ -6,9 +6,9 @@ fn main() {
         (x * m).round() / m
     }
 
-    let x1 = Node::input(1.0);
-    let x2 = Node::input(2.0);
-    let x3 = Node::input(3.0);
+    let x1 = InputNode::from_val(1.0);
+    let x2 = InputNode::from_val(2.0);
+    let x3 = InputNode::from_val(3.0);
     let graph = Node::add(
         x1.clone(),
         Node::mul(
